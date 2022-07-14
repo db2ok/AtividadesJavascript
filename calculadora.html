@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title></title>
+  </head>
+  <body> 
+    <script>
+
+//verifica se o ponto jão foi digitado alguma vez, para não haver duplicidade
+     var numPonto = false
+//verifica se o valor que está no visor, para que ao digitar um número ele seja apagado
+     var resultadoDeOperacao = false
+//registra o tipo de operação a ser efetuada
+    var operacao
+//registra os números a serem calculados
+    var valor1, valor2
+     
+     
+//funções para adicionar números e ponto ao visor, associadas aos botões
+    function num7(){
+    	let x = formulario.visor.value
+      
+      if (resultadoDeOperacao==false) {
+      	formulario.visor.value = x+"7"
+      } else {
+      	formulario.visor.value = "7"
+        resultadoDeOperacao=false
+      }
+    }
+      
+    function num8(){
+    	let x = formulario.visor.value
+      
+      if (resultadoDeOperacao==false) {
+      	formulario.visor.value = x+"8"
+      } else {
+      	formulario.visor.value = "8"
+        resultadoDeOperacao=false
+      }
+    }
+    
+    function num9(){
+    	let x = formulario.visor.value
+      
+      if (resultadoDeOperacao==false) {
+      	formulario.visor.value = x+"9"
+      } else {
+      	formulario.visor.value = "9"
+        resultadoDeOperacao=false
+      }
+    }
+      
+    function num4(){
+    	let x = formulario.visor.value
+      
+      if (resultadoDeOperacao==false) {
+      	formulario.visor.value = x+"4"
+      } else {
+      	formulario.visor.value = "4"
+        resultadoDeOperacao=false
+      }
+    }
+    
+    function num5(){
+    	let x = formulario.visor.value
+      
+      if (resultadoDeOperacao==false) {
+      	formulario.visor.value = x+"5"
+      } else {
+      	formulario.visor.value = "5"
+        resultadoDeOperacao=false
+      }
+    }
+    
+    function num6(){
+    	let x = formulario.visor.value
+      
+      if (resultadoDeOperacao==false) {
+      	formulario.visor.value = x+"6"
+      } else {
+      	formulario.visor.value = "6"
+        resultadoDeOperacao=false
+      }
+    }
+    
+    function num1(){
+    	let x = formulario.visor.value
+      
+      if (resultadoDeOperacao==false) {
+      	formulario.visor.value = x+"1"
+      } else {
+      	formulario.visor.value = "1"
+        resultadoDeOperacao=false
+      }
+    }
+      
+    function num2(){
+    	let x = formulario.visor.value
+      
+      if (resultadoDeOperacao==false) {
+      	formulario.visor.value = x+"2"
+      } else {
+      	formulario.visor.value = "2"
+        resultadoDeOperacao=false
+      }
+    }
+      
+    function num3(){
+    	let x = formulario.visor.value
+      
+      if (resultadoDeOperacao==false) {
+      	formulario.visor.value = x+"3"
+      } else {
+      	formulario.visor.value = "3"
+        resultadoDeOperacao=false
+      }
+    }
+      
+    function num0(){
+    	let x = formulario.visor.value
+      
+      if (resultadoDeOperacao==false) {
+      	formulario.visor.value = x+"0"
+      } else {
+      	formulario.visor.value = "0"
+        resultadoDeOperacao=false
+      }
+    }
+    
+    function ponto() {
+    	
+      let x = formulario.visor.value
+      
+      if (numPonto == false && x!="") {
+      	formulario.visor.value = x+"."
+      	numPonto = true
+      }
+      
+    }
+
+//função para limpar o visor
+    function limpar(){
+    	formulario.visor.value=""
+      numPonto = false
+    }
+
+//funções dos botões de cálculo
+    function mais(){
+    
+      operacao="somar"
+      valor1= formulario.visor.value
+      //formulario.visor.value = ""
+      numPonto = false
+    
+    }
+      
+    function menos(){
+    
+      operacao="subtrair"
+      valor1= formulario.visor.value
+      formulario.visor.value = ""
+      numPonto = false
+    
+    }
+    
+    function vezes(){
+    
+      operacao="multiplicar"
+      valor1= formulario.visor.value
+      formulario.visor.value = ""
+      numPonto = false
+    
+    }
+    
+    function divide(){
+    
+      operacao="dividir"
+      valor1= formulario.visor.value
+      formulario.visor.value = ""
+      numPonto = false
+    
+    }
+
+//funções para operações
+    
+   	function somar(v1, v2){
+    	
+      let total = parseFloat(v1) + parseFloat(v2)
+      formulario.visor.value= total
+      
+    }  
+     
+     function subtrair(v1, v2){
+    	
+      let total = parseFloat(v1) - parseFloat(v2)
+      formulario.visor.value= total
+      
+    }  
+      
+    function dividir(v1, v2){
+    	
+      let total = parseFloat(v1) / parseFloat(v2)
+      formulario.visor.value= total
+      
+    }  
+      
+    function multiplicar(v1, v2){
+    	
+      let total = parseFloat(v1) * parseFloat(v2)
+      formulario.visor.value= total
+      
+    }  
+      
+      
+//calcular o total com base na operação escolhida
+      
+      function resultado() {
+       	
+        valor2 = formulario.visor.value
+        
+      	switch (operacao) {
+          case "somar":
+        		somar(valor1, valor2)
+            break
+          case "subtrair":
+          	subtrair(valor1, valor2)
+            break
+          case "multiplicar":
+          	multiplicar(valor1, valor2)
+            break
+          case "dividir":
+            dividir(valor1, valor2)
+           break
+          default:
+          	break
+            
+        }
+        
+      		resultadoDeOperacao = true
+        
+      }   
+      
+    </script>
+    
+    
+    <p3>Calculadora Comercial</p3>
+    <form name="formulario">
+      <input type="text" name="visor" size=12>
+      <table>
+        <tbody>
+          <tr>
+            <td><input value="C" type="button" onclick="limpar()"></td>
+            <td><input value=" " type="button" ></td>
+            <td><input value=" " type="button" ></td>
+            <td><input value=" " type="button" ></td>
+          </tr>
+          <tr>
+            <td><input value="7" type="button" onclick="num7()"></td>
+            <td><input value="8" type="button" onclick="num8()"></td>
+            <td><input value="9" type="button" onclick="num9()"></td>
+            <td><input value=":" type="button" onclick="divide()"></td>
+          </tr>
+          <tr>
+            <td><input value="4" type="button" onclick="num4()"></td>
+            <td><input value="5" type="button" onclick="num5()"></td>
+            <td><input value="6" type="button" onclick="num6()"></td>
+            <td><input value="x" type="button" onclick="vezes()"></td>
+          </tr>
+          <tr>
+            <td><input value="1" type="button" onclick="num1()"></td>
+            <td><input value="2" type="button" onclick="num2()"></td>
+            <td><input value="3" type="button" onclick="num3()"></td>
+            <td><input value="-" type="button"  onclick="menos()"></td>
+          </tr>
+          <tr>
+            <td><input value="." type="button" onclick="ponto()"></td>
+            <td><input value="0" type="button" onclick="num0()"></td>
+            <td><input value="=" type="button" onclick="resultado()"></td>
+            <td><input value="+" type="button" onclick="mais()"></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <p></p>
+  </body>
+</html>
